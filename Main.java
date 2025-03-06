@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 import Gerenciadores_E_Entidades.GerenciadorClientes;
+import Gerenciadores_E_Entidades.GerenciadorVeiculos;
 
 public class Main {
 
@@ -15,6 +16,10 @@ public class Main {
             case "A":
                 GerenciadorClientes criaCliente = new GerenciadorClientes();
                 criaCliente.CriaCliente();
+                break;
+            case "B":
+                GerenciadorVeiculos criaVeiculos = new GerenciadorVeiculos();
+                criaVeiculos.cadastraVeiculo();
                 break;
 
             default:

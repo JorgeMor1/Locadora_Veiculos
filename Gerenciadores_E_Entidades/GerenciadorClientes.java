@@ -26,7 +26,6 @@ public class GerenciadorClientes extends Clientes {
         clientes.add(sc.nextInt());
     
         System.out.println("Cliente cadastrado com sucesso!");
-        //System.out.println("Seus dados são: \n" + clientes);
         
         sc.close();
     }

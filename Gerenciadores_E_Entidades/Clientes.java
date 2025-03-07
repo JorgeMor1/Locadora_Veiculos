@@ -1,5 +1,4 @@
 package Gerenciadores_E_Entidades;
-import javax.xml.crypto.Data;
 
 abstract class Clientes {
     private String nome;

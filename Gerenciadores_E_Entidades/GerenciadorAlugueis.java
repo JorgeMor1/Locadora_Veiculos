@@ -1,21 +1,36 @@
 package Gerenciadores_E_Entidades;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
 public class GerenciadorAlugueis extends Alugueis {
+    private GerenciadorEntradaUsuario entradaUsuario;
     public GerenciadorAlugueis() {
+        this.entradaUsuario = new GerenciadorEntradaUsuario();
     }
+    GerenciadorReserva gerenciadorReserva = new GerenciadorReserva();
 
     public GerenciadorAlugueis(String marcaVeiculos, String versaoVeiculo, Integer anoVeiculo,
             Integer quilometragemAtual) {
         super(marcaVeiculos, versaoVeiculo, anoVeiculo, quilometragemAtual);
-
+        this.entradaUsuario = new GerenciadorEntradaUsuario();
     }
 
+    public void executeSelecaoVeiculo(){
+        entradaUsuario.selecaoTipoVeiculo();
+        entradaUsuario.reserva();
+    }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+/* 
     public void AlugaVeiculos() {
         Scanner sc = new Scanner(System.in);
         var scheduler = Executors.newScheduledThreadPool(1);
@@ -92,6 +107,6 @@ public class GerenciadorAlugueis extends Alugueis {
         } else if (resposta.equals("N")) {
             System.out.println("Lamentamos! Na próxima teremos mais veículos!");
         }
-    }
+    }*/
 
 }

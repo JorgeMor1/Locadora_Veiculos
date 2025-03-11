@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class GerenciadorClientes extends Clientes {
+public class CadastroCliente extends Clientes {
 
-    public GerenciadorClientes() {
+    public CadastroCliente() {
     }
 
-    public GerenciadorClientes(String nome, Integer dataNasci, Integer documentoPessoal) {
+    public CadastroCliente(String nome, Integer dataNasci, Integer documentoPessoal) {
         super(nome, dataNasci, documentoPessoal);
     }
 
@@ -22,10 +22,11 @@ public class GerenciadorClientes extends Clientes {
         int dataNasci = sc.nextInt();
         System.out.print("Digite seu CPF: ");
         int documentoPessoal = sc.nextInt();
-        GerenciadorClientes cliente = new GerenciadorClientes(nome, dataNasci, documentoPessoal);
+        CadastroCliente cliente = new CadastroCliente(nome, dataNasci, documentoPessoal);
+        System.out.println("Cadastrando Cliente, aguarde...");
         scheduler.schedule(() -> {
-            System.out.println(cliente.getNome() + ", cadastrado com sucesso!");
-        }, 4, TimeUnit.SECONDS);
+            System.out.println(cliente.getNome() + ", seu cadastrado foi realizado com sucesso!");
+        }, 3, TimeUnit.SECONDS);
         scheduler.shutdown();
 
         sc.close();

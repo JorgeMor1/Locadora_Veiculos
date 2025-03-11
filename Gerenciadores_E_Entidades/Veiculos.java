@@ -1,26 +1,20 @@
 package Gerenciadores_E_Entidades;
 
-abstract class Veiculos {
-    private String marca;
+public class Veiculos {
+
     private String modelo;
     private Integer quilometragem;
     private Integer anoVeiculo;
-    
-    public Veiculos(){
+
+    public Veiculos() {
 
     }
 
-    public Veiculos(String marca, String modelo, Integer quilometragem, Integer anoVeiculo){
-        this.marca = marca;
+    public Veiculos(String modelo, Integer quilometragem, Integer anoVeiculo) {
         this.modelo = modelo;
         this.quilometragem = quilometragem;
         this.anoVeiculo = anoVeiculo;
 
-    }
-
-
-    public String getMarca() {
-        return this.marca;
     }
 
     public String getModelo() {
@@ -29,6 +23,14 @@ abstract class Veiculos {
 
     public Integer getQuilometragem() {
         return this.quilometragem;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setAnoVeiculo(Integer anoVeiculo) {
+        this.anoVeiculo = anoVeiculo;
     }
 
     public void setQuilometragem(Integer quilometragem) {
@@ -40,8 +42,13 @@ abstract class Veiculos {
     }
 
     @Override
-    public String toString(){
-        return "'Marca= {" + marca + "' Modelo = " + modelo + "' Quilometragem atual: " + quilometragem  + "}";
+    public String toString() {
+        return "'Modelo = " + modelo + "' Quilometragem atual: " + quilometragem + "}";
     }
+
+    public Double taxa(Double valorVeiculo, Integer quantidadeMes) {
+        Double taxa = 0.10;
+        return (valorVeiculo / quantidadeMes) * taxa;
+    };
 
 }

@@ -1,6 +1,5 @@
 package Gerenciadores_E_Entidades;
 abstract class Alugueis {
-    private String marcaVeiculo;
     private String versaoVeiculo;
     private Integer anoVeiculo;
     private Integer quilometragemAtual;
@@ -9,14 +8,9 @@ abstract class Alugueis {
 
 
     public Alugueis(String marcaVeiculo, String versaoVeiculo, Integer anoVeiculo, Integer quilometragemAtual) {
-        this.marcaVeiculo = marcaVeiculo;
         this.versaoVeiculo = versaoVeiculo;
         this.anoVeiculo = anoVeiculo;
         this.quilometragemAtual = quilometragemAtual;
-    }
-
-    public String getMarcaVeiculo() {
-        return this.marcaVeiculo;
     }
 
     public String getVersaoVeiculo() {
@@ -34,7 +28,12 @@ abstract class Alugueis {
 
     @Override
     public String toString(){
-        return "Marca = {'" + marcaVeiculo + "' Versao = '" + versaoVeiculo + "' Ano ='" + anoVeiculo + "' + Quilometragem ='" + quilometragemAtual +  "'}";   
+        return " 'Versao = {'" + versaoVeiculo + "' Ano ='" + anoVeiculo + "' + Quilometragem ='" + quilometragemAtual +  "'}";   
+    }
+
+    public double taxa( double valorVeiculo){
+        Double tarifaMinima = 0.10;
+        return valorVeiculo * tarifaMinima;
     }
 
 }

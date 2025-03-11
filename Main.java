@@ -1,38 +1,30 @@
-import java.util.Scanner;
-
 import Gerenciadores_E_Entidades.GerenciadorAlugueis;
-import Gerenciadores_E_Entidades.GerenciadorClientes;
-import Gerenciadores_E_Entidades.GerenciadorVeiculos;
+import Gerenciadores_E_Entidades.GerenciadorEntradaUsuario;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Olá! Bem-vindo! \n O que deseja fazer hoje ? \n"
-                + "(A) - Cadastrar um novo cliente! \n"
-                + "(B) - Cadastrar um novo Veículo \n"
-                + "(C) - Alugar Veículos");
-        String selecao = sc.nextLine();
+        GerenciadorEntradaUsuario selecaoDepartamento = new GerenciadorEntradaUsuario();
+        String departamentoSelecionado = selecaoDepartamento.selecaoDepartamento();
 
-        switch (selecao.toUpperCase()) {
+        switch (departamentoSelecionado) {
             case "A":
-                GerenciadorClientes criaCliente = new GerenciadorClientes();
-                criaCliente.CriaCliente();
+                GerenciadorEntradaUsuario criaCliente = new GerenciadorEntradaUsuario();
+                criaCliente.gerenciaCadastroCliente();
                 break;
             case "B":
-                GerenciadorVeiculos criaVeiculos = new GerenciadorVeiculos();
+                GerenciadorEntradaUsuario criaVeiculos = new GerenciadorEntradaUsuario();
                 criaVeiculos.cadastraVeiculo();
                 break;
             case "C":
                 GerenciadorAlugueis gerenciaAlugueis = new GerenciadorAlugueis();
-                gerenciaAlugueis.AlugaVeiculos();
+                gerenciaAlugueis.executeSelecaoVeiculo();
                 break;
 
             default:
                 System.out.println("Essa opção não seleciona nenhum de nossos serviços. Até mais!");
                 break;
         }
-        sc.close();
 
     }
 }

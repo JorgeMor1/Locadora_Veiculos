@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class GerenciadorVeiculos extends Veiculos {
-    public GerenciadorVeiculos() {
+public class CadastroVeiculos extends Veiculos {
+    public CadastroVeiculos() {
     }
 
-    public GerenciadorVeiculos(String modelo, Integer quilometragem, Integer anoVeiculo) {
+    public CadastroVeiculos(String modelo, Integer quilometragem, Integer anoVeiculo) {
         super(modelo, quilometragem, anoVeiculo);
 
     }

@@ -1,30 +1,34 @@
-import Gerenciadores_E_Entidades.GerenciadorAlugueis;
+import Gerenciadores_E_Entidades.ConfirmaReservaVeiculos;
+import Gerenciadores_E_Entidades.DisponibilidadeVeiculos;
 import Gerenciadores_E_Entidades.GerenciadorEntradaUsuario;
+import Gerenciadores_E_Entidades.SelecionaModeloVeiculos;
 
 public class Main {
 
     public static void main(String[] args) {
-        GerenciadorEntradaUsuario selecaoDepartamento = new GerenciadorEntradaUsuario();
-        String departamentoSelecionado = selecaoDepartamento.selecaoDepartamento();
+        GerenciadorEntradaUsuario gerenciamentoEntrada = new GerenciadorEntradaUsuario();
+        String departamentoSelecionado = gerenciamentoEntrada.selecaoDepartamento();
+
+        DisponibilidadeVeiculos gerenciaAlugueis = new DisponibilidadeVeiculos();
+        SelecionaModeloVeiculos selecionaVeiculo = new SelecionaModeloVeiculos();
+        ConfirmaReservaVeiculos confirmacao = new ConfirmaReservaVeiculos();
 
         switch (departamentoSelecionado) {
             case "A":
-                GerenciadorEntradaUsuario criaCliente = new GerenciadorEntradaUsuario();
-                criaCliente.gerenciaCadastroCliente();
+                gerenciamentoEntrada.gerenciaCadastroCliente();
                 break;
             case "B":
-                GerenciadorEntradaUsuario criaVeiculos = new GerenciadorEntradaUsuario();
-                criaVeiculos.cadastraVeiculo();
+                gerenciamentoEntrada.cadastraVeiculo();
                 break;
             case "C":
-                GerenciadorAlugueis gerenciaAlugueis = new GerenciadorAlugueis();
-                gerenciaAlugueis.executeSelecaoVeiculo();
+                selecionaVeiculo.selecaoTipoVeiculo();
+                gerenciaAlugueis.veiculosDisponiveis(selecionaVeiculo);
+                confirmacao.confirmacaoAluguel();
+                confirmacao.mockLoading();            
                 break;
-
             default:
                 System.out.println("Essa opção não seleciona nenhum de nossos serviços. Até mais!");
                 break;
         }
-
     }
 }

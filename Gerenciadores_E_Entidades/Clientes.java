@@ -1,33 +1,35 @@
 package Gerenciadores_E_Entidades;
 
+import java.util.Date;
+
 abstract class Clientes {
-    private String nome;
-    private Integer dataNasci;
-    private Integer documentoPessoal;
+    protected String nomeCompleto;
+    protected Date dataNascimento;
+    protected Integer documentoPessoal;
 
     public Clientes(){
     }
 
-    public Clientes(String nome, Integer dataNasci, Integer documentoPessoal){
-        this.nome = nome;
-        this.dataNasci = dataNasci;
+    public Clientes(String nomeCompleto, Date dataNascimento, Integer documentoPessoal){
+        this.nomeCompleto = nomeCompleto;
+        this.dataNascimento = dataNascimento;
         this.documentoPessoal = documentoPessoal;
     }
 
-    public String getNome() {
-        return this.nome;
+    public String getNomeCompleto() {
+        return this.nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
     }
 
-    public Integer getDataNasci() {
-        return this.dataNasci;
+    public Date getDataNasci() {
+        return this.dataNascimento;
     }
 
-    public void setDataNasci(Integer dataNasci) {
-        this.dataNasci = dataNasci;
+    public void setDataNasci(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
     public Integer getDocumentoPessoal() {
@@ -37,7 +39,7 @@ abstract class Clientes {
 
     @Override
     public String toString(){
-        return "Pessoa {nome = '" + nome + "', Data de Nascimento=' " + dataNasci + " ' Documento Pessoal = '" + documentoPessoal + "'}";
+        return "Pessoa {nome = '" + nomeCompleto + "', Data de Nascimento=' " + dataNascimento + " ' Documento Pessoal = '" + documentoPessoal + "'}";
     }
 
 }

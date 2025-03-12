@@ -24,6 +24,7 @@ public class ConfirmaReservaVeiculos {
     public void mockLoading() {
         String resposta = confirmacaoAluguel();
         CadastroCliente cadastroCliente = new CadastroCliente();
+        
 
         if (resposta.equals("S")) { 
             System.out.println("OPS! Primeiro é necessário realizar seu cadastro.");
@@ -35,7 +36,7 @@ public class ConfirmaReservaVeiculos {
             System.out.println("Reservando seu veículo. Por favor, aguarde...");
             simularProcesso(4000);
 
-            System.out.println("✅ Seu veículo foi reservado com sucesso!\n"
+            System.out.println( cadastroCliente.getNomeCompleto() + " Seu veículo foi reservado com sucesso!\n"
                     + "Venha até nossa concessionária para buscar seu veículo!");
         } else {
             System.out.println("Lamentamos! Na próxima teremos mais veículos!");

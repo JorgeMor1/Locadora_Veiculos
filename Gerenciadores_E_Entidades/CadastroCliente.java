@@ -58,6 +58,25 @@ public class CadastroCliente extends Clientes {
             }
             }while(!cpfInvalido);
 
+            boolean emailValido = false;
+            do {
+                try {
+                    System.out.print("Digite seu E-mail: ");
+                    String email = sc.nextLine();
+                    String EMAIL_REGEX = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+                                                
+                    Boolean emailConvertido = email.matches(EMAIL_REGEX);
+
+                    if (!emailConvertido) {
+                        throw new IllegalArgumentException("E-mail inválido. Por favor, digite um e-mail válido.");
+                    }
+                    emailValido = true;
+                } catch (IllegalArgumentException e) {
+                    System.out.println(e.getMessage());
+                }
+                
+            } while (!emailValido);
+
             System.out.println("Cadastrando Cliente, aguarde...");
             scheduler.schedule(() -> {
                 System.out.println(getNomeCompleto() +
